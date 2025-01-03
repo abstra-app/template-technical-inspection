@@ -1,0 +1,297 @@
+{
+  "workspace": {
+    "name": "Workspace",
+    "language": "en",
+    "theme": null,
+    "logo_url": "./logo.png",
+    "favicon_url": "./favicon.ico",
+    "brand_name": "Abstra Project",
+    "main_color": null,
+    "font_family": null,
+    "font_color": null
+  },
+  "home": {
+    "access_control": {
+      "is_public": false,
+      "required_roles": []
+    }
+  },
+  "jobs": [],
+  "hooks": [],
+  "forms": [
+    {
+      "id": "6cdc455f-e52e-4965-b5f4-7ac38a33ec5a",
+      "path": "request-inspection",
+      "title": "Request Inspection",
+      "is_initial": true,
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "file": "request_inspection.py",
+      "workflow_position": [
+        285,
+        60
+      ],
+      "transitions": [
+        {
+          "target_id": "134fed9a-fa69-4fb0-ac0e-55a733f8950b",
+          "target_type": "forms",
+          "type": "task",
+          "id": "65yc4z0",
+          "task_type": "inspection_requested"
+        }
+      ],
+      "notification_trigger": {
+        "variable_name": "assignee_emails",
+        "enabled": false
+      },
+      "access_control": {
+        "is_public": false,
+        "required_roles": [
+          "cliente"
+        ]
+      }
+    },
+    {
+      "id": "748be691-796f-458e-919a-b6172944b9cc",
+      "path": "collect-field-data",
+      "title": "Collect Field Data",
+      "is_initial": false,
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "file": "collect_field_data.py",
+      "workflow_position": [
+        375,
+        420
+      ],
+      "transitions": [
+        {
+          "target_id": "32a37bac-a912-4895-ae1a-b89aaa3ebc2b",
+          "target_type": "forms",
+          "type": "task",
+          "id": "w2io376",
+          "task_type": "inspection_completed"
+        }
+      ],
+      "notification_trigger": {
+        "variable_name": "assignee_emails",
+        "enabled": false
+      },
+      "access_control": {
+        "is_public": false,
+        "required_roles": [
+          "vistoriador"
+        ]
+      }
+    },
+    {
+      "id": "134fed9a-fa69-4fb0-ac0e-55a733f8950b",
+      "path": "evaluate-request",
+      "title": "Evaluate Request",
+      "is_initial": false,
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "file": "evaluate_request.py",
+      "workflow_position": [
+        315,
+        180
+      ],
+      "transitions": [
+        {
+          "target_id": "a2dbcdca-bb21-4837-8e62-baffd6563cb2",
+          "target_type": "forms",
+          "type": "task",
+          "id": "zi67f5i",
+          "task_type": "scope_defined"
+        }
+      ],
+      "notification_trigger": {
+        "variable_name": "assignee_emails",
+        "enabled": false
+      },
+      "access_control": {
+        "is_public": false,
+        "required_roles": [
+          "engenheiro_responsavel"
+        ]
+      }
+    },
+    {
+      "id": "a2dbcdca-bb21-4837-8e62-baffd6563cb2",
+      "path": "plan-inspection",
+      "title": "Plan Inspection",
+      "is_initial": false,
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "file": "plan_inspection.py",
+      "workflow_position": [
+        360,
+        300
+      ],
+      "transitions": [
+        {
+          "target_id": "748be691-796f-458e-919a-b6172944b9cc",
+          "target_type": "forms",
+          "type": "task",
+          "id": "2i2bln3",
+          "task_type": "inspection_planned"
+        }
+      ],
+      "notification_trigger": {
+        "variable_name": "assignee_emails",
+        "enabled": false
+      },
+      "access_control": {
+        "is_public": false,
+        "required_roles": [
+          "engenheiro_responsavel"
+        ]
+      }
+    },
+    {
+      "id": "32a37bac-a912-4895-ae1a-b89aaa3ebc2b",
+      "path": "fill-report",
+      "title": "Fill Report",
+      "is_initial": false,
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "file": "fill_report.py",
+      "workflow_position": [
+        450,
+        540
+      ],
+      "transitions": [
+        {
+          "target_id": "4853956d-8dcf-4b90-bdfb-f49dc01301d8",
+          "target_type": "scripts",
+          "type": "task",
+          "id": "0p7jq2m",
+          "task_type": "report_filled"
+        }
+      ],
+      "notification_trigger": {
+        "variable_name": "assignee_emails",
+        "enabled": false
+      },
+      "access_control": {
+        "is_public": false,
+        "required_roles": [
+          "engenheiro_responsavel"
+        ]
+      }
+    },
+    {
+      "id": "14e4cff6-e62c-42af-8b2e-7d440e10c3cf",
+      "path": "review-report",
+      "title": "Review Report",
+      "is_initial": false,
+      "auto_start": false,
+      "allow_restart": false,
+      "end_message": null,
+      "start_message": null,
+      "error_message": null,
+      "welcome_title": null,
+      "timeout_message": null,
+      "start_button_text": null,
+      "restart_button_text": null,
+      "file": "review_report.py",
+      "workflow_position": [
+        840,
+        585
+      ],
+      "transitions": [
+        {
+          "target_id": "32a37bac-a912-4895-ae1a-b89aaa3ebc2b",
+          "target_type": "forms",
+          "type": "task",
+          "id": "d3tqrwu",
+          "task_type": "report_rejected"
+        },
+        {
+          "target_id": "b71542c5-f7a5-42ab-aa67-a4ba87e169c4",
+          "target_type": "scripts",
+          "type": "task",
+          "id": "mnhduc7",
+          "task_type": "report_approved"
+        }
+      ],
+      "notification_trigger": {
+        "variable_name": "assignee_emails",
+        "enabled": false
+      },
+      "access_control": {
+        "is_public": false,
+        "required_roles": [
+          "revisor"
+        ]
+      }
+    }
+  ],
+  "scripts": [
+    {
+      "id": "b71542c5-f7a5-42ab-aa67-a4ba87e169c4",
+      "file": "send_report.py",
+      "title": "Send Report",
+      "is_initial": false,
+      "workflow_position": [
+        915,
+        735
+      ],
+      "transitions": []
+    },
+    {
+      "id": "4853956d-8dcf-4b90-bdfb-f49dc01301d8",
+      "file": "generate_file.py",
+      "title": "Generate File",
+      "is_initial": false,
+      "workflow_position": [
+        495,
+        675
+      ],
+      "transitions": [
+        {
+          "target_id": "14e4cff6-e62c-42af-8b2e-7d440e10c3cf",
+          "target_type": "forms",
+          "type": "task",
+          "id": "udi3zh8",
+          "task_type": "file_generated"
+        }
+      ]
+    }
+  ],
+  "version": "12.0"
+}

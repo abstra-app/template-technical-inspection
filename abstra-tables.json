@@ -1,0 +1,65 @@
+{
+  "tables": [
+    {
+      "id": "d22db855-e4e0-4f1a-9b30-95ebcc7f32ef",
+      "name": "team_members",
+      "columns": [
+        {
+          "id": "12a6c8d6-0242-45a8-922f-a662526331f0",
+          "name": "id",
+          "type": "uuid",
+          "nullable": false,
+          "unique": true,
+          "primaryKey": true,
+          "default": "gen_random_uuid()"
+        },
+        {
+          "id": "078cdb55-641a-43cb-9eab-670e5211af77",
+          "name": "created_at",
+          "type": "timestamp",
+          "nullable": false,
+          "unique": false,
+          "primaryKey": false,
+          "default": "now()"
+        },
+        {
+          "id": "915f2a45-1831-4867-b5c7-09bd475c6e43",
+          "name": "name",
+          "type": "varchar",
+          "nullable": false,
+          "unique": false,
+          "primaryKey": false,
+          "default": "'DEFAULT_VALUE'::character varying"
+        },
+        {
+          "id": "d10245c8-6964-48ad-9ed5-728bb2deac51",
+          "name": "email",
+          "type": "varchar",
+          "nullable": false,
+          "unique": true,
+          "primaryKey": false,
+          "default": "'DEFAULT_VALUE'::character varying"
+        },
+        {
+          "id": "3d3fff7d-f768-4156-a75b-87d6ede22095",
+          "name": "title",
+          "type": "varchar",
+          "nullable": false,
+          "unique": false,
+          "primaryKey": false,
+          "default": "'DEFAULT_VALUE'::character varying"
+        },
+        {
+          "id": "7031a004-9067-4fed-8760-18535fb17b93",
+          "name": "credentials",
+          "type": "varchar",
+          "nullable": false,
+          "unique": false,
+          "primaryKey": false,
+          "default": "'DEFAULT_VALUE'::character varying"
+        }
+      ],
+      "data": []
+    }
+  ]
+}
